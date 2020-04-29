@@ -3,36 +3,40 @@ function myFunction() {
 
   // Get the value of the input field with id="numb"
   x = document.getElementById("num1").value;
-  y = document.getElementById("num2").value;
+
   // If x is Not a Number or less than 2 or greater than 100
-  if ((isNaN(x) || x < 2 || x > 100) && (isNaN(y) || y < 2 || y > 100)){
+  if (isNaN(x) || x < 2 || x > 100) {
     text = "Invalid input, please try again.";
-    document.getElementById("demo").innerHTML = text;
-    document.getElementById("demo").style.color= "red";
-    document.getElementById("demo").style.marginLeft = "25px";
   } else {
-
-        var pirmeNumberlist = sumPrimes(x,y);
-        console.log(pirmeNumberlist)
-        text = pirmeNumberlist.toString();
-        document.getElementById("demo").innerHTML = text;
-        document.getElementById("demo").style.color= "teal";
-        document.getElementById("demo").style.marginLeft = "25px";
+    x = document.getElementById("num2").value;
+      if (isNaN(x) || x < 2 || x > 100) {
+        text="Invalid input, please try again."
+      }else{
+        function arry(num1, num2) {
+          let primeArr=[];
+          nextPrime:
+          for (let i = Integer.valueOf(num1); i <=Integer.valueOf(num2); i++) {
+              for (let j = 2; j<i; j++) {
+                  if (i %j ==0) continue nextPrime;
+              }
+              primeArr.push(i);
+          }
+          return primeArr;
+          console.log(primeArr)
+        }
+        
       }
+  }
   
+  document.getElementById("demo").innerHTML = text;
+  document.getElementById("demo").style.color= "red";
+  document.getElementById("demo").style.marginLeft = "25px";
 }
 
-function sumPrimes(num1, num2) {
-  let primeArr = [];
-  nextPrime:
-  for (let i = num1; i <= num2; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
-    primeArr.push(i);
-  }
-  return primeArr;
-}
+
+
+
+
 // function arr() {
 //   num1= document.getElementById("num1").value;
 //   num2= document.getElementById("num2").value;
@@ -78,4 +82,4 @@ function sumPrimes(num1, num2) {
 //   return x !== 1 && x !== 0;
 // }
 // //test here
-// // sumPrimes(10);
+// // sumPrimes(10)
