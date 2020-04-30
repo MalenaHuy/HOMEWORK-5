@@ -1,37 +1,181 @@
 function myFunction() {
-  var x, text;
+  var text;
+  
 
   // Get the value of the input field with id="numb"
-  x = document.getElementById("num1").value;
+  var x = document.getElementById("num1").value;
+  // convert the string to interger
+  var x = parseInt(x,10) 
 
-  // If x is Not a Number or less than 2 or greater than 100
-  if (isNaN(x) || x < 2 || x > 100) {
+  var y = document.getElementById("num2").value;
+  var y = parseInt(y,10)
+  
+    // If x is Not a Number or less than 2 or greater than 100
+  if ((isNaN(x) || x < 2 || x > 100) || (isNaN(y) || y < 2 || y>100)){
     text = "Invalid input, please try again.";
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo").style.color= "red";
+    document.getElementById("demo").style.marginLeft = "25px";
   } else {
-    x = document.getElementById("num2").value;
-      if (isNaN(x) || x < 2 || x > 100) {
-        text="Invalid input, please try again."
-      }else{
-        function arry(num1, num2) {
-          let primeArr=[];
-          nextPrime:
-          for (let i = Integer.valueOf(num1); i <=Integer.valueOf(num2); i++) {
-              for (let j = 2; j<i; j++) {
-                  if (i %j ==0) continue nextPrime;
-              }
-              primeArr.push(i);
-          }
-          return primeArr;
-          console.log(primeArr)
-        }
-        
-      }
+    var pirmeNumberlist = sumPrimes(x,y);
+    console.log(pirmeNumberlist)
+    text = pirmeNumberlist.toString();
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo").style.color= "teal";
+    document.getElementById("demo").style.marginLeft = "25px";
+    }
   }
   
-  document.getElementById("demo").innerHTML = text;
-  document.getElementById("demo").style.color= "red";
-  document.getElementById("demo").style.marginLeft = "25px";
-}
+  function sumPrimes(x, y) {
+    let primeArr = [];
+    nextPrime:
+    for (let i = x; i <= y; i++) {
+      for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextPrime;
+      }
+      primeArr.push(i);
+    }
+    return primeArr;
+  }
+  
+
+
+
+
+
+
+
+
+
+  
+//   // If x is Not a Number or less than 2 or greater than 100
+//   if ((isNaN(x) || x < 2 || x > 100) && (isNaN(y) || y < 2 || y > 100)){
+//     text = "Invalid input, please try again.";
+//     document.getElementById("demo").innerHTML = text;
+//     document.getElementById("demo").style.color= "red";
+//     document.getElementById("demo").style.marginLeft = "25px";
+//   } else {
+
+//         var pirmeNumberlist = sumPrimes(x,y);
+//         console.log(pirmeNumberlist)
+//         text = pirmeNumberlist.toString();
+//         document.getElementById("demo").innerHTML = text;
+//         document.getElementById("demo").style.color= "teal";
+//         document.getElementById("demo").style.marginLeft = "25px";
+//       }
+  
+// }
+
+// function sumPrimes(num1, num2) {
+//   let primeArr = [];
+//   nextPrime:
+//   for (let i = num1; i <= num2; i++) {
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) continue nextPrime;
+//     }
+//     primeArr.push(i);
+//   }
+//   return primeArr;
+// }
+
+
+
+
+
+
+
+// function myFunction() {
+//   var text;
+  
+
+//   // Get the value of the input field with id="numb"
+//   var x = document.getElementById("num1").value;
+//   // convert the string to interger
+//   var xx = preseInt(x,10) 
+
+//   var y = document.getElementById("num2").value;
+//   var yy = preseInt(y,10)
+
+  
+//   // If x is Not a Number or less than 2 or greater than 100
+//   if ((isNaN(x) || x < 2 || x > 100) && (isNaN(y) || y < 2 || y > 100)){
+//     text = "Invalid input, please try again.";
+//     document.getElementById("demo").innerHTML = text;
+//     document.getElementById("demo").style.color= "red";
+//     document.getElementById("demo").style.marginLeft = "25px";
+//   } else {
+
+//         var pirmeNumberlist = sumPrimes(x,y);
+//         console.log(pirmeNumberlist)
+//         text = pirmeNumberlist.toString();
+//         document.getElementById("demo").innerHTML = text;
+//         document.getElementById("demo").style.color= "teal";
+//         document.getElementById("demo").style.marginLeft = "25px";
+//       }
+  
+// }
+
+// function sumPrimes(num1, num2) {
+//   let primeArr = [];
+//   nextPrime:
+//   for (let i = num1; i <= num2; i++) {
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) continue nextPrime;
+//     }
+//     primeArr.push(i);
+//   }
+//   return primeArr;
+// }
+
+
+
+
+
+
+
+// function myFunction() {
+//   var x, text;
+  
+
+//   // Get the value of the input field with id="numb"
+//   x = document.getElementById("num1").value;
+
+//   // If x is Not a Number or less than 2 or greater than 100
+//   if (isNaN(x) || x < 2 || x > 100) {
+//     text = "Invalid input, please try again.";
+//   } else {
+//     y = document.getElementById("num2").value;
+//       if (isNaN(y) || y < 2 || y > 100) {
+//         text="Invalid input, please try again."
+//       }else{
+//         // accepts two inputs to create a prim number and create array 
+//         function array (x, y) {
+//           let primeArr=[];
+//           nextPrime:
+//           for (let i = Integer.valueOf(x); i <=Integer.valueOf(y); i++) {
+//               for (let j = 2; j<i; j++) {
+//                   if (i %j ==0) continue nextPrime;
+//               }
+//               primeArr.push(i);
+//           }
+//           return primeArr;
+//         }
+//         console.log (primeArr)
+//         text1="prime arrya"
+//         document.getElementById("demo").innerHTML = text1;
+//         document.getElementById("demo").style.color= "teal";
+//         document.getElementById("demo").style.marginLeft = "25px";
+//       }
+//   }
+  
+//   document.getElementById("demo").innerHTML = text;
+//   document.getElementById("demo").style.color= "red";
+//   document.getElementById("demo").style.marginLeft = "25px";
+// }
+
+
+
+
 
 
 
