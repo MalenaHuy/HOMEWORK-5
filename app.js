@@ -16,13 +16,27 @@ function myFunction() {
     document.getElementById("demo").innerHTML = text;
     document.getElementById("demo").style.color= "red";
     document.getElementById("demo").style.marginLeft = "25px";
+    text="";
+    document.getElementById("demo2").innerHTML = text;
   } else {
-    var pirmeNumberlist = sumPrimes(x,y);
-    console.log(pirmeNumberlist)
-    text = pirmeNumberlist.toString();
-    document.getElementById("demo").innerHTML = text;
+    var pirmeNumberlist = sumPrimes(x,y); 
+    var text1, text2;
+    // console.log(pirmeNumberlist)
+    text1 = pirmeNumberlist.toString();
+    document.getElementById("demo2").innerHTML = text1;
+    document.getElementById("demo2").style.fontSize = "15px"
+    document.getElementById("demo2").style.color= "red";
+    document.getElementById("demo2").style.marginLeft = "25px";
+
+    var length= pirmeNumberlist.length;
+    // console.log (pirmeNumberlist.length)
+    text2 = "There are "+ length + " prime numbers";
+    document.getElementById("demo").innerHTML = text2;
+    document.getElementById("demo").style.fontSize = "30px"
     document.getElementById("demo").style.color= "teal";
     document.getElementById("demo").style.marginLeft = "25px";
+
+    
     }
   }
   
