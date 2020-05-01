@@ -46,28 +46,27 @@ function myFunction() {
       }
       return primeArr;
     }
-  }
-
-    
-     
+  } 
     var text1, text2;
     // console.log(pirmeNumberlist)
     text1 = pirmeNumberlist.toString();
-    document.getElementById("demo2").innerHTML = text1;
+    document.getElementById("demo2").innerHTML = text1.bold();
     document.getElementById("demo2").style.fontSize = "15px"
     document.getElementById("demo2").style.color= "red";
     document.getElementById("demo2").style.marginLeft = "25px";
 
     var length= pirmeNumberlist.length;
     // console.log (pirmeNumberlist.length)
-    text2 = "There are "+ length + " prime numbers";
+    text2 = "There are "+ length + " prime numbers.";
     document.getElementById("demo").innerHTML = text2;
-    document.getElementById("demo").style.fontSize = "30px"
+    document.getElementById("demo").style.fontSize = "20px"
     document.getElementById("demo").style.color= "teal";
     document.getElementById("demo").style.marginLeft = "25px";
   }
-  
 }
+
+
+
   
 // function sumPrimes(x, y) {
 //   let primeArr = [];
