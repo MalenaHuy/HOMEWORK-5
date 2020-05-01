@@ -23,3 +23,19 @@
 
 }
 
+@media screen and (max-width: 900px) {
+    .row {
+      flex-direction: column;
+    }
+    .text{
+        width: 100%;    
+    }
+  };
+
+  @media (min-width: 768px){ 
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 1000%;
+    }
+  }
