@@ -14,12 +14,42 @@ function myFunction() {
   if ((isNaN(x) || x < 2 || x > 100) || (isNaN(y) || y < 2 || y>100)){
     text = "Invalid input, please try again.";
     document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo").style.fontSize = "15px"
     document.getElementById("demo").style.color= "red";
     document.getElementById("demo").style.marginLeft = "25px";
     text="";
     document.getElementById("demo2").innerHTML = text;
-  } else {
-    var pirmeNumberlist = sumPrimes(x,y); 
+  } else { if ( x > y){
+    var pirmeNumberlist = minPrimes(x,y);
+    function minPrimes(x,y)  {
+      let primeArr = [];
+      nextPrime:
+      for (let i = y; i <= x; i++) {
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) continue nextPrime;
+        }
+        primeArr.push(i);
+      }
+      return primeArr;
+    }
+      
+  }else{
+    var pirmeNumberlist = sumPrimes(x,y);
+    function sumPrimes(x, y) {
+      let primeArr = [];
+      nextPrime:
+      for (let i = x; i <= y; i++) {
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) continue nextPrime;
+        }
+        primeArr.push(i);
+      }
+      return primeArr;
+    }
+  }
+
+    
+     
     var text1, text2;
     // console.log(pirmeNumberlist)
     text1 = pirmeNumberlist.toString();
@@ -39,30 +69,30 @@ function myFunction() {
   
 }
   
-function sumPrimes(x, y) {
-  let primeArr = [];
-  nextPrime:
-  for (let i = x; i <= y; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
-    primeArr.push(i);
-  }
-  return primeArr;
-}
+// function sumPrimes(x, y) {
+//   let primeArr = [];
+//   nextPrime:
+//   for (let i = x; i <= y; i++) {
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) continue nextPrime;
+//     }
+//     primeArr.push(i);
+//   }
+//   return primeArr;
+// }
 
 
-function sumPrimes(x, y) {
-  let primeArr = [];
-  nextPrime:
-  for (let i = y; i <= x; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
-    primeArr.push(i);
-  }
-  return primeArr;
-}
+// function minPrimes(x,y)  {
+//   let primeArr = [];
+//   nextPrime:
+//   for (let i = y; i <= x; i++) {
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) continue nextPrime;
+//     }
+//     primeArr.push(i);
+//   }
+//   return primeArr;
+// }
   
 
 
