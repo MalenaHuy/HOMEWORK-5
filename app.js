@@ -35,24 +35,35 @@ function myFunction() {
     document.getElementById("demo").style.fontSize = "30px"
     document.getElementById("demo").style.color= "teal";
     document.getElementById("demo").style.marginLeft = "25px";
-
-    
-    }
   }
   
-  function sumPrimes(x, y) {
-    let primeArr = [];
-    nextPrime:
-    for (let i = x; i <= y; i++) {
-      for (let j = 2; j < i; j++) {
-        if (i % j == 0) continue nextPrime;
-      }
-      primeArr.push(i);
-    }
-    return primeArr;
-  }
+}
   
+function sumPrimes(x, y) {
+  let primeArr = [];
+  nextPrime:
+  for (let i = x; i <= y; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    primeArr.push(i);
+  }
+  return primeArr;
+}
 
+
+function sumPrimes(x, y) {
+  let primeArr = [];
+  nextPrime:
+  for (let i = y; i <= x; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    primeArr.push(i);
+  }
+  return primeArr;
+}
+  
 
 
 
